@@ -1,7 +1,7 @@
 -- ミ箇祘
 ALTER PROCEDURE dbo.pikachu
-    @type  NVARCHAR(1),           -- 块把计1
-    @ord_num NVARCHAR(1),  -- 块把计2
+    @p1  NVARCHAR(1),           -- 块把计1
+    @p2 NVARCHAR(1),  -- 块把计2
     @OutputParam INT OUTPUT    -- 块把计
 AS
 
@@ -14,8 +14,8 @@ BEGIN
 
         -- 璸衡ボㄒ
         SELECT COUNT(*)
-        FROM job_mst
-        WHERE type = @type AND ord_type = @ord_num;
+        FROM apple
+        WHERE p1 = @p1 AND ord_p1 = @p2;
 
         -- 盢挡狦块把计
         SET @OutputParam = @TempVar;
